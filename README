@@ -1,0 +1,17 @@
+PROG :	
+	>I have simulated the "real-life" stack. In real-life after certain "limit" we stop pushing to the stack
+	and start making another one, thats what has been implemented in the code. 
+	>So "Set of Stacks" is the data structure that represents many small stacks.
+
+	>We should be able to pop from any of the stacks, just like real life, so accordingly pop() function has
+	been written.
+
+NOTES :
+	>In "stack.h", I ve exposed only those functions from "stack.c" which the 3rd person should use, rest all 
+	functions from "stack.c" have been made "static". Good practice, will follow it further too.
+
+	>One issue that could be handled is :
+		>Since we are allowed to pop() from any stack anytime, it may result into many small small stacks
+		with 1-2 items in it, so basically Set of Stacks are "under-utilized".
+		>Solution : Whenever we pop() from a stack that is not the last one, take the first element from 
+		next stack & push it in current stack.
